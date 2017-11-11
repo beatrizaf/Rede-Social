@@ -1,9 +1,10 @@
 class Publication:
-    def __init__(self,privacidade,texto,midia,localizacao):
+    def __init__(self,privacidade,texto,midia,localizacao,link):
         self.privacidade = privacidade
         self.texto = texto
         self.midia = midia
         self.localizacao = localizacao
+        self.link = link
 
     def get_privacidade(self):
         return self.privacidade
@@ -25,8 +26,7 @@ class Publication:
     def set_localizacao(self, nova_localizacao):
         self.localizacao = nova_localizacao
 
-
-
-
+    def get_comentario(self):
+        return self.comentario
 
 
