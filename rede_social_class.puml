@@ -4,6 +4,8 @@ string nome
 string endereco
 integer data_nascimento
 integer telefone
+string email
+string senha
 get nome ()
 set nome ()
 get endereco ()
@@ -12,6 +14,9 @@ get data_nascimento ()
 set data_nascimento ()
 get telefone ()
 set telefone ()
+get email ()
+get senha ()
+set senha()
 }
 class Perfil{
 foto
@@ -22,13 +27,6 @@ get bibliografia ()
 set bibliografia()
 get foto ()
 set foto()
-}
-class Conta{
-string email
-string senha
-get email ()
-get senha ()
-set senha()
 }
 class Bate_papo{
 conversa_privada
@@ -66,7 +64,6 @@ coentar
 compartilhar
 set comentar()
 }
-
 Perfil --* Usuario
 Conta "1" -- "1" Pefil
 Conta "N" --* "1" Usuario
@@ -78,7 +75,5 @@ Notificador "N" --* "M" Amizade
 Reacao "N" --* "M" Publicacao
 Usuario "1" -- "N" Amizade
 Usuario "N" -- "M" Bate_papo
-
-
 
 @enduml
