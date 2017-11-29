@@ -28,5 +28,7 @@ class Publication:
 
     def get_comentario(self):
         return self.comentario
+    def set_comentario(self, novo_comentario):
+        self.comentario = novo_comentario 
 
 
