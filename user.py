@@ -1,3 +1,5 @@
+from genesis import Cadastrar
+cadastrar=Cadastrar
 class User:
     def __init__(self,nome,endereco,data_nsc,telefone,email,senha):
         self.nome = nome
@@ -6,6 +8,7 @@ class User:
         self.telefone = telefone
         self.email = email
         self.senha = senha
+        self.amigos =[]
 
     def get_nome(self):
         return self.nome
@@ -32,6 +35,13 @@ class User:
     def set_senha(self, nova_senha):
         self.senha = nova_senha
 
+    def logar(self):
+        L = input("digite o email:")
+        for L in cadastrar.lista_email:
+            S = input('Digite sua senha')
+            for S in cadastrar.lista_senha
+                return self.menu()
+
     def menu(self):
         print('1 - Editar nome')
         print('2 - Editar endereço')
@@ -56,4 +66,4 @@ class User:
         if opcao == '5':
             print('Todos os Dados:' / next('Nome:', self.get_nome()) / next('Endereço:', self.get_endereco()) / next('Data de Nascimento:', self.get_data_nsc())/ next('Telefone:', self.get_telefone()))
 
-    return opcao
+        return opcao
