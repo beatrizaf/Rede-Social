@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # Crie o banco de dados em sqlite e salva no arquivo: /tmp/test.db
-app = Flask(__name__)
+app = Flask(__email_senha__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
