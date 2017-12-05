@@ -11,7 +11,7 @@ class Cadastrar(db.Model):
     senha = db.Column(db.String(18))
 
     def __init__(self,**kwargs):
-        super(Cadastra, self).__init__(**kwargs)
+        super(Cadastrar, self).__init__(**kwargs)
         self.lista_email = []
         self.lista_senha = []
 
