@@ -10,7 +10,7 @@ class Cadastrar(db.Model):
     email = db.Column(db.String(100), primary_key=True)
     senha = db.Column(db.String(18))
 
-    def __init__(self):
+    def __init__(self,**kwargs):
         self.lista_email = []
         self.lista_senha = []
 
