@@ -10,6 +10,7 @@ class Perfil|(db.Model)
     biblio = db.Column(db.String(1000))
     
     def __init__(self,foto,bibliografia,**kwargs):
+        super(perfil, self).__init__(**kwargs)
         self.foto = foto
         self.biblio = bibliografia
 
