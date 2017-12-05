@@ -6,8 +6,6 @@ class User:
         self.endereco = endereco
         self.data_nsc = data_nsc
         self.telefone = telefone
-        self.email = email
-        self.senha = senha
         self.amigos =[]
 
     def get_nome(self):
@@ -31,17 +29,23 @@ class User:
         self.telefone = novo_telefone
 
     def set_email(self, novo_email):
-        self.email = novo_email
+        genesis.email = novo_email
     def set_senha(self, nova_senha):
-        self.senha = nova_senha
+        genesis.senha = nova_senha
 
     def logar(self):
         L = input("digite o email:")
-        for L in cadastrar.lista_email:
+        if L in genesis.email.query.all(): 
             S = input('Digite sua senha')
-            for S in cadastrar.lista_senha
+            if S in genesis.Senha.query.all():                               
                 return self.menu()
-
+            else:
+                print('Senha Incorreta')
+                return self.logar
+        else:
+            print('email nao encontrado')
+            return self.logar()
+            
     def menu(self):
         print('1 - Editar nome')
         print('2 - Editar endereço')
