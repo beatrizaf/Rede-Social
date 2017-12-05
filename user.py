@@ -86,11 +86,9 @@ class User(db.Model):
             self.set_telefone(novo_tel)
         if opcao == '5':
             print('Todos os Dados:' / next('Nome:', self.get_nome()) / next('Endereço:', self.get_endereco()) / next('Data de Nascimento:', self.get_data_nsc())/ next('Telefone:', self.get_telefone()))
-
         return opcao
 
 db.create_all()
 U = user(1, 100)
 db.session.add(u)
 db.session.commit()
-
