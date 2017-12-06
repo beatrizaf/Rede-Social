@@ -5,9 +5,10 @@ app = Flask(__perfil__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
-class Perfil|(db.Model)
+class Perfil(db.Model):
 
     biblio = db.Column(db.String(1000))
+    nome = db.Colunm(db.string(100),foreign_key= True)
     
     def __init__(self,foto,bibliografia,**kwargs):
         super(perfil, self).__init__(**kwargs)
@@ -26,3 +27,5 @@ class Perfil|(db.Model)
         
 db.create_all()
 db.session.add()
+#colocar em usuario
+#blob
