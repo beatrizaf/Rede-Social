@@ -16,7 +16,7 @@ class ContaDAO():
 	
 	def inserir_senha(self):
         cursor = self.conexao.cursor()
-        cursor.execute('INSERT INTO tb_senha(email) VALUES (%s)', (user.senha))
+        cursor.execute('INSERT INTO tb_senha(senha) VALUES (%s)', (user.senha))
         cursor.close()
         self.conexao.commit()
 	
