@@ -1,17 +1,17 @@
-from user_dao import ContaDAO
 import psycopg2
 class User:
-    
+
     def __init__(self):
-		conexao = psycopg2.connect(host="localhost", database="##", user="postgres", password="postgres")
+        conexao = psycopg2.connect(host="localhost", database="##", user="postgres", password="postgres")
         self.UserDAO = UserDAO(conexao)
         self.nome = ''
         self.endereco = ''
         self.data_nsc = ''
         self.telefone = ''
-        self.amigos = []
-        self.email = []
-        self.senha = []
+        self.amigos = None
+        self.email = None
+        self.senha = None
+
 
     def get_nome(self):
         return self.nome
@@ -32,38 +32,6 @@ class User:
         return self.telefone
     def set_telefone(self, novo_telefone):
         self.telefone = novo_telefone
-
-    def set_email(self, novo_email):
-        genesis.email = novo_email
-
-    def set_senha(self, nova_senha):
-        genesis.senha = nova_senha
-
-    def inicio(self):
-        print('1-Fazer Loguin')
-        print('2-Fazer Cadastro')
-        opcao1 = input('Digite a Opção:')
-        if opcao1 == '1' :
-            if L in lista_email:
-                S = input('Digite sua senha')
-                if S in senha_email:
-                    self.menu()
-                else:
-                    print('Senha Incorreta')
-                    self.logar()
-            else:
-                print('email nao encontrado')
-                self.logar()
-        elif opcao1 == '2':
-            print('Criar conta:')
-            Loguin = input('Digite um email:')
-            Senha = input('Digite uma senha')
-            self.email = Loguin
-            self.senha = Senha
-            self.inicio()
-			self.UserDAO.inserir_email(email)
-			self.UserDAO.inserir_senha(senha)
-			
 
     def menu(self):
         print('1 - Editar nome')
@@ -89,4 +57,6 @@ class User:
             self.set_telefone(novo_tel)
         if opcao == '5':
             print('Todos os Dados:' / next('Nome:', self.get_nome()) / next('Endereço:', self.get_endereco()) / next('Data de Nascimento:', self.get_data_nsc())/ next('Telefone:', self.get_telefone()))
+        if opcao == '6':
+
         return opcao
