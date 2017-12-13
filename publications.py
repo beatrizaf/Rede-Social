@@ -5,6 +5,8 @@ class Publication:
         self.midia = midia
         self.localizacao = localizacao
         self.link = link
+        self.comentario = comentario
+        self.reacao = reacao
 
     def get_privacidade(self):
         return self.privacidade
@@ -31,4 +33,13 @@ class Publication:
     def set_comentario(self, novo_comentario):
         self.comentario = novo_comentario 
 
-
+    def menu_reacao(self):
+        print('1--Curti')
+        print('2--Amei')
+        print('3--Odiei')
+        if opcao == '1':
+            self.reacao = ('Curti!')
+        if opcao == '2':
+            self.reacao = ('Amei!')
+        if opcao == '3':
+            self.reacao = ('Odiei!')
