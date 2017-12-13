@@ -8,15 +8,10 @@ class ContaDAO():
     def __init__(self, conexao):
         self.conexao = conexao
 
-    def inserir_email(self):
+    def inserir_conta(self,email):
         cursor = self.conexao.cursor()
-        cursor.execute('INSERT INTO tb_email(email) VALUES (%s)', (user.email))
+        cursor.execute('INSERT INTO tb_loguin(email, senha) VALUES (%s,%s)', (email,senha))
         cursor.close()
         self.conexao.commit()
-	
-	def inserir_senha(self):
-        cursor = self.conexao.cursor()
-        cursor.execute('INSERT INTO tb_senha(senha) VALUES (%s)', (user.senha))
-        cursor.close()
-        self.conexao.commit()
-	
+
+
