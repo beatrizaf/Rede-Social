@@ -1,15 +1,12 @@
-from genesis import Cadastrar
-cadastrar=Cadastrar
-
-class User:
-
-    
+class User: 
     def __init__(self):
         self.nome = ''
         self.endereco = ''
         self.data_nsc = ''
         self.telefone = ''
         self.amigos = []
+        self.lista_email = []
+        self.lista_senha = []
 
     def get_nome(self):
         return self.nome
@@ -37,26 +34,38 @@ class User:
     def set_senha(self, nova_senha):
         genesis.senha = nova_senha
 
-
-    def logar(self):
-        L = input("digite o email:")
-        if L in genesis.email.query.all(): 
-            S = input('Digite sua senha')
-            if S in genesis.Senha.query.all():                               
-                return self.menu()
+    def inicio(self):
+        print('1-Fazer Loguin')
+        print('2-Fazer Cadastro')
+        opcao1 = input('Digite a Opção:')
+        if opcao1 == '1' :
+            if L in lista_email:
+                S = input('Digite sua senha')
+                if S in senha_email:
+                    self.menu()
+                else:
+                    print('Senha Incorreta')
+                    self.logar()
             else:
-                print('Senha Incorreta')
-                return self.logar
-        else:
-            print('email nao encontrado')
-            return self.logar()
-            
+                print('email nao encontrado')
+                self.logar()
+        elif opcao1 == '2':
+            print('Criar conta:')
+            Loguin = input('Digite um email:')
+            Senha = input('Digite uma senha')
+            self.lista_email.append(Loguin)
+            self.lista_senha.append(Senha)
+            self.inicio()
+
+
+
     def menu(self):
         print('1 - Editar nome')
         print('2 - Editar endereço')
-        print('3 - Editar data de Nascimento')
-        print('4 - editar telefone')
+        print('3 - Editar Data de Nascimento')
+        print('4 - editar Telefone')
         print('5 - Mostrar Dados')
+        print('6 - Acessar Perfil')
         print('x - Sair')
         opcao = input('Digite a opção:')
 
@@ -75,4 +84,3 @@ class User:
         if opcao == '5':
             print('Todos os Dados:' / next('Nome:', self.get_nome()) / next('Endereço:', self.get_endereco()) / next('Data de Nascimento:', self.get_data_nsc())/ next('Telefone:', self.get_telefone()))
         return opcao
-
