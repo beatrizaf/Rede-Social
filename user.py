@@ -1,12 +1,17 @@
-class User: 
+from user_dao import ContaDAO
+import psycopg2
+class User:
+    
     def __init__(self):
+		conexao = psycopg2.connect(host="localhost", database="##", user="postgres", password="postgres")
+        self.UserDAO = UserDAO(conexao)
         self.nome = ''
         self.endereco = ''
         self.data_nsc = ''
         self.telefone = ''
         self.amigos = []
-        self.lista_email = []
-        self.lista_senha = []
+        self.email = []
+        self.senha = []
 
     def get_nome(self):
         return self.nome
@@ -53,11 +58,12 @@ class User:
             print('Criar conta:')
             Loguin = input('Digite um email:')
             Senha = input('Digite uma senha')
-            self.lista_email.append(Loguin)
-            self.lista_senha.append(Senha)
+            self.email = Loguin
+            self.senha = Senha
             self.inicio()
-
-
+			self.UserDAO.inserir_email(email)
+			self.UserDAO.inserir_senha(senha)
+			
 
     def menu(self):
         print('1 - Editar nome')
