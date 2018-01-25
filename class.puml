@@ -1,0 +1,79 @@
+@startuml
+class Usuario{
+string nome
+string endereco
+integer data_nascimento
+integer telefone
+string email
+string senha
+get nome ()
+set nome ()
+get endereco ()
+set endereco ()
+get idade ()
+set idade ()
+get telefone ()
+set telefone ()
+get email ()
+get senha ()
+set senha()
+}
+class Perfil{
+foto
+string bibliografia
+string nome
+get nome ()
+get bibliografia ()
+set bibliografia()
+get foto ()
+set foto()
+}
+class Bate_papo{
+conversa_privada
+conversa_publica
+status
+notificador
+}
+class Amizade{
+list todos_amigos
+adcionar_amigo
+remover_remover
+notificador
+get nome_do_outro_usuario ()
+}
+class Notificador{
+notificacao
+get detalhe_noificacao()
+}
+class Publicacao{
+privacidade
+texto
+midia
+localidade
+get texto ()
+set texto ()
+get midia ()
+set midia ()
+get localidade ()
+set localidade ()
+}
+class Reacao{
+curtir
+amar
+coentar
+compartilhar
+set comentar()
+}
+Perfil --* Usuario
+Conta "1" -- "1" Pefil
+Conta "N" --* "1" Usuario
+Bate_papo --* Perfil
+Amizade --* Perfil
+Notificador "N" --* "1" Bate_papo
+Notificador "N" --* "1" Publicacao
+Notificador "N" --* "M" Amizade
+Reacao "N" --* "M" Publicacao
+Usuario "1" -- "N" Amizade
+Usuario "N" -- "M" Bate_papo
+
+@enduml
