@@ -19,13 +19,14 @@ class Perfil:
             print('Digite algo sobre você para que os outros possam lhe conhecer melhor!')
             self.bibliografia = input('Digite: ')
         if opcao == '2':
+            pass
             opcao = ''
             while opcao != 'x':
-                opcao = bp.menu(None)
+               opcao = bp.menu(None)
         if opcao == '3':
             print(self.bibliografia)
             c = 0
-            for x in self.amigos:
+            for x in self.amigos():
                 c+=1
             print('amigos =',c)
 
