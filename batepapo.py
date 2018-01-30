@@ -1,5 +1,5 @@
 from sistema import Sistem
-sis = Sistem
+sis = Sistem()
 class Batepapo:
     def __init__(self):
         self.conversas = list
@@ -15,7 +15,7 @@ class Batepapo:
         if opcao == '1':
            mensagem.nova_conversa(None)
         if opcao == '2':
-            for x in self.conversas:
+            for x in self.conversas():
                 print(x)
         if opcao == '3':
             mensagem.nova_msg(None)
@@ -33,12 +33,12 @@ class mensagem:
         for x in sis.contas:
             if x.nome == destino:
                 txt = self.texto
-                new_con = Conversa
+                new_con = Conversa()
                 new_con.menssagens.append(txt)
     def nova_msg(self):
         destino = input('Digite o nome do outro prosador: ')
-        new_ms = mensagem
-        con = Batepapo
+        new_ms = mensagem()
+        con = Batepapo()
         for x in con.conversas:
             if x.nome == destino:
                 for y in x:
