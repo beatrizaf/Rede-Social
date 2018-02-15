@@ -1,5 +1,5 @@
-from sistema import Sistem
-sis = Sistem()
+from acounts import Bd
+con = Bd()
 class Batepapo:
     def __init__(self):
         self.conversas = list
@@ -10,16 +10,16 @@ class Batepapo:
         print('2 - Ver todas as conversas')
         print('3 - Nova menssagem')
         print('x - Sair')
-        opcao = input('Digite a opção: ')
+        opca = input('Digite a opção: ')
 
-        if opcao == '1':
+        if opca == '1':
            mensagem.nova_conversa(None)
-        if opcao == '2':
+        if opca == '2':
             for x in self.conversas():
                 print(x)
-        if opcao == '3':
+        if opca == '3':
             mensagem.nova_msg(None)
-        return (opcao)
+        return (opca)
 class Conversa:
     def __init__(self):
         self.menssagens = list
@@ -30,16 +30,15 @@ class mensagem:
 
     def nova_conversa(self):
         destino = input('Digite o nome do destinatario: ')
-        for x in sis.contas:
+        for x in con.contas:
             if x.nome == destino:
                 txt = self.texto
                 new_con = Conversa()
                 new_con.menssagens.append(txt)
-    def nova_msg(self):
+    def nova_msg(self):#passar a lista de conversas como argumento
         destino = input('Digite o nome do outro prosador: ')
         new_ms = mensagem()
-        con = Batepapo()
-        for x in con.conversas:
+        for x in self.conversas:
             if x.nome == destino:
                 for y in x:
                     print(y)
