@@ -10,6 +10,7 @@ class Loguin:
         self.email = str
         self.senha =str
 
+
 class Bd:
     def __init__(self):
         self.contas = []
@@ -17,4 +18,4 @@ class Bd:
 
     def insert_user(self,user,log):
         self.contas.append(user)
-        self.loguin.append(log())
+        self.loguin.append(log)
