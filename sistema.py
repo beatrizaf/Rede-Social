@@ -30,5 +30,5 @@ class Sistem:
             if email in log.email and senha in log.senha:
                 opc = ''
                 while opc != 'x':
-                    opc = perfil.menu_feed(email, senha)
+                    opc = perfil.menu_feed(None)
         return(opcao)
